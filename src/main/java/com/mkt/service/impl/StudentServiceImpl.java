@@ -29,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public String insert(Student student) {
         Student student1 = new Student();
-        student1.setName("事务");
+        student1.setName("事务1");
         int i = studentMapper.insertStudent(student1);
         int a =1/0;
         TscCcreceiving tscCcreceiving = new TscCcreceiving();
