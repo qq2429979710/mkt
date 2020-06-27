@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mkt.mysqlmapper.StudentMapper" >
+  <cache></cache>
+  <select id="finAll"  resultType="com.mkt.entity.Student" >
+   SELECT * FROM Student
+  </select>
+
+    <insert id="insertStudent" parameterType="com.mkt.entity.Student" >
+        INSERT INTO
+        `mkt_test`.`student` ( `name`, `age`)
+        VALUES (#{name}, #{age});
+    </insert>
+</mapper>

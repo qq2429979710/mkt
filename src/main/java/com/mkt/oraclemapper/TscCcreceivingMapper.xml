@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mkt.oraclemapper.TscCcreceivingMapper" >
+  <cache></cache>
+  <sql id="Base_Column_List" >
+    C_ID, C_PLANT, C_STAID, C_STADESC, C_PEW, C_STOVE, C_STOVEMAINID, C_PLANCASTID, C_NOTICEID, 
+    C_STDSPEC, C_STLGRD, C_SPEC, C_LTH, C_ISOPEN, C_GROUP, C_SHIFT, N_STOVENUM, C_STOVESTATE, 
+    D_STOVEDATEIN, D_STOVEDATES, D_STOVEDATEE, D_STOVETIME, D_WEIGHTGROSS, D_WEIGHTTARE, 
+    D_WEIGHTNET, C_FEEDSTATE, C_PARAMSTATE, C_TEMPIN, C_TEMPOUT, C_ACCDATE, C_STATIONCC, 
+    C_REMARK, C_CRTEMPER, C_CRTTIME, C_MODIFIER, C_MODIFYTIME, C_TIMESTAMP, C_DR, C_CREATER, 
+    C_CREATETIME, C_STATE, C_SW01, C_SW02, C_SW03, C_SW04, C_SW05, C_SW06, C_SW07, C_SW08, 
+    C_SW09, C_SW10, C_SW11, C_SW12, C_SW13, C_SW14, C_SW15, C_TOOL_ID, C_TOOLAGE, C_TOOLCASTID,C_TOOLSTARTTIME,
+    C_TOOLENDTIME,C_PLANTGB,C_BEHOOF,C_CASTING_ORDER,C_JJQID
+  </sql>
+  <select id="selectByPrimaryKey"  resultType="com.mkt.entity.TscCcreceiving" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from TSC_CCRECEIVING
+    where C_ID = #{cId,jdbcType=VARCHAR}
+  </select>
+  <insert id="insertTscCcreceiving" parameterType="com.mkt.entity.TscCcreceiving" >
+    insert into TSC_CCRECEIVING
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        C_ID,
+      </if>
+      <if test="cPlant != null" >
+        C_PLANT,
+      </if>
+      <if test="cStaid != null" >
+        C_STAID,
+      </if>
+      <if test="cStadesc != null" >
+        C_STADESC,
+      </if>
+      <if test="cPew != null" >
+        C_PEW,
+      </if>
+      <if test="cStove != null" >
+        C_STOVE,
+      </if>
+      <if test="cStovemainid != null" >
+        C_STOVEMAINID,
+      </if>
+      <if test="cPlancastid != null" >
+        C_PLANCASTID,
+      </if>
+      <if test="cNoticeid != null" >
+        C_NOTICEID,
+      </if>
+      <if test="cStdspec != null" >
+        C_STDSPEC,
+      </if>
+      <if test="cStlgrd != null" >
+        C_STLGRD,
+      </if>
+      <if test="cSpec != null" >
+        C_SPEC,
+      </if>
+      <if test="cLth != null" >
+        C_LTH,
+      </if>
+      <if test="cIsopen != null" >
+        C_ISOPEN,
+      </if>
+      <if test="cGroup != null" >
+        C_GROUP,
+      </if>
+      <if test="cShift != null" >
+        C_SHIFT,
+      </if>
+      <if test="nStovenum != null" >
+        N_STOVENUM,
+      </if>
+      <if test="cStovestate != null" >
+        C_STOVESTATE,
+      </if>
+      <if test="dStovedatein != null" >
+        D_STOVEDATEIN,
+      </if>
+      <if test="dStovedates != null" >
+        D_STOVEDATES,
+      </if>
+      <if test="dStovedatee != null" >
+        D_STOVEDATEE,
+      </if>
+      <if test="dStovetime != null" >
+        D_STOVETIME,
+      </if>
+      <if test="dWeightgross != null" >
+        D_WEIGHTGROSS,
+      </if>
+      <if test="dWeighttare != null" >
+        D_WEIGHTTARE,
+      </if>
+      <if test="dWeightnet != null" >
+        D_WEIGHTNET,
+      </if>
+      <if test="cFeedstate != null" >
+        C_FEEDSTATE,
+      </if>
+      <if test="cParamstate != null" >
+        C_PARAMSTATE,
+      </if>
+      <if test="cTempin != null" >
+        C_TEMPIN,
+      </if>
+      <if test="cTempout != null" >
+        C_TEMPOUT,
+      </if>
+      <if test="cAccdate != null" >
+        C_ACCDATE,
+      </if>
+      <if test="cStationcc != null" >
+        C_STATIONCC,
+      </if>
+      <if test="cRemark != null" >
+        C_REMARK,
+      </if>
+      <if test="cCrtemper != null" >
+        C_CRTEMPER,
+      </if>
+      <if test="cCrttime != null" >
+        C_CRTTIME,
+      </if>
+      <if test="cModifier != null" >
+        C_MODIFIER,
+      </if>
+      <if test="cModifytime != null" >
+        C_MODIFYTIME,
+      </if>
+      C_TIMESTAMP,
+      <if test="cDr != null" >
+        C_DR,
+      </if>
+      <if test="cCreater != null" >
+        C_CREATER,
+      </if>
+      <if test="cCreatetime != null" >
+        C_CREATETIME,
+      </if>
+      <if test="cState != null" >
+        C_STATE,
+      </if>
+      <if test="cSw01 != null" >
+        C_SW01,
+      </if>
+      <if test="cSw02 != null" >
+        C_SW02,
+      </if>
+      <if test="cSw03 != null" >
+        C_SW03,
+      </if>
+      <if test="cSw04 != null" >
+        C_SW04,
+      </if>
+      <if test="cSw05 != null" >
+        C_SW05,
+      </if>
+      <if test="cSw06 != null" >
+        C_SW06,
+      </if>
+      <if test="cSw07 != null" >
+        C_SW07,
+      </if>
+      <if test="cSw08 != null" >
+        C_SW08,
+      </if>
+      <if test="cSw09 != null" >
+        C_SW09,
+      </if>
+      <if test="cSw10 != null" >
+        C_SW10,
+      </if>
+      <if test="cSw11 != null" >
+        C_SW11,
+      </if>
+      <if test="cSw12 != null" >
+        C_SW12,
+      </if>
+      <if test="cSw13 != null" >
+        C_SW13,
+      </if>
+      <if test="cSw14 != null" >
+        C_SW14,
+      </if>
+      <if test="cSw15 != null" >
+        C_SW15,
+      </if>
+      <if test="cToolId != null">
+        C_TOOL_ID,
+      </if>
+      <if test="cToolage != null">
+        C_TOOLAGE,
+      </if>
+      <if test="cToolcastid != null">
+        C_TOOLCASTID,
+      </if>
+      <if test="cToolstarttime != null">
+        C_TOOLSTARTTIME,
+      </if>
+      <if test="cToolendtime != null">
+        C_TOOLENDTIME,
+      </if>
+      <if test="cPlantgb != null">
+        C_PLANTGB,
+      </if>
+      <if test="cBehoof != null">
+        C_BEHOOF,
+      </if>
+      <if test="cCastingOrder != null">
+        C_CASTING_ORDER,
+      </if>
+      <if test="cJjqid != null">
+        C_JJQID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        #{cId,jdbcType=VARCHAR},
+      </if>
+      <if test="cPlant != null" >
+        #{cPlant,jdbcType=VARCHAR},
+      </if>
+      <if test="cStaid != null" >
+        #{cStaid,jdbcType=VARCHAR},
+      </if>
+      <if test="cStadesc != null" >
+        #{cStadesc,jdbcType=VARCHAR},
+      </if>
+      <if test="cPew != null" >
+        #{cPew,jdbcType=VARCHAR},
+      </if>
+      <if test="cStove != null" >
+        #{cStove,jdbcType=VARCHAR},
+      </if>
+      <if test="cStovemainid != null" >
+        #{cStovemainid,jdbcType=VARCHAR},
+      </if>
+      <if test="cPlancastid != null" >
+        #{cPlancastid,jdbcType=VARCHAR},
+      </if>
+      <if test="cNoticeid != null" >
+        #{cNoticeid,jdbcType=VARCHAR},
+      </if>
+      <if test="cStdspec != null" >
+        #{cStdspec,jdbcType=VARCHAR},
+      </if>
+      <if test="cStlgrd != null" >
+        #{cStlgrd,jdbcType=VARCHAR},
+      </if>
+      <if test="cSpec != null" >
+        #{cSpec,jdbcType=VARCHAR},
+      </if>
+      <if test="cLth != null" >
+        #{cLth,jdbcType=VARCHAR},
+      </if>
+      <if test="cIsopen != null" >
+        #{cIsopen,jdbcType=DECIMAL},
+      </if>
+      <if test="cGroup != null" >
+        #{cGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="cShift != null" >
+        #{cShift,jdbcType=VARCHAR},
+      </if>
+      <if test="nStovenum != null" >
+        #{nStovenum,jdbcType=DECIMAL},
+      </if>
+      <if test="cStovestate != null" >
+        #{cStovestate,jdbcType=VARCHAR},
+      </if>
+      <if test="dStovedatein != null" >
+        #{dStovedatein,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dStovedates != null" >
+        #{dStovedates,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dStovedatee != null" >
+        #{dStovedatee,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dStovetime != null" >
+        #{dStovetime,jdbcType=VARCHAR},
+      </if>
+      <if test="dWeightgross != null" >
+        #{dWeightgross,jdbcType=DECIMAL},
+      </if>
+      <if test="dWeighttare != null" >
+        #{dWeighttare,jdbcType=DECIMAL},
+      </if>
+      <if test="dWeightnet != null" >
+        #{dWeightnet,jdbcType=DECIMAL},
+      </if>
+      <if test="cFeedstate != null" >
+        #{cFeedstate,jdbcType=VARCHAR},
+      </if>
+      <if test="cParamstate != null" >
+        #{cParamstate,jdbcType=VARCHAR},
+      </if>
+      <if test="cTempin != null" >
+        #{cTempin,jdbcType=VARCHAR},
+      </if>
+      <if test="cTempout != null" >
+        #{cTempout,jdbcType=VARCHAR},
+      </if>
+      <if test="cAccdate != null" >
+        #{cAccdate,jdbcType=DATE},
+      </if>
+      <if test="cStationcc != null" >
+        #{cStationcc,jdbcType=VARCHAR},
+      </if>
+      <if test="cRemark != null" >
+        #{cRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="cCrtemper != null" >
+        #{cCrtemper,jdbcType=VARCHAR},
+      </if>
+      <if test="cCrttime != null" >
+        #{cCrttime,jdbcType=VARCHAR},
+      </if>
+      <if test="cModifier != null" >
+        #{cModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="cModifytime != null" >
+        #{cModifytime,jdbcType=TIMESTAMP},
+      </if>
+      SYSTIMESTAMP,
+      <if test="cDr != null" >
+        #{cDr,jdbcType=VARCHAR},
+      </if>
+      <if test="cCreater != null" >
+        #{cCreater,jdbcType=VARCHAR},
+      </if>
+      <if test="cCreatetime != null" >
+        #{cCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="cState != null" >
+        #{cState,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw01 != null" >
+        #{cSw01,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw02 != null" >
+        #{cSw02,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw03 != null" >
+        #{cSw03,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw04 != null" >
+        #{cSw04,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw05 != null" >
+        #{cSw05,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw06 != null" >
+        #{cSw06,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw07 != null" >
+        #{cSw07,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw08 != null" >
+        #{cSw08,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw09 != null" >
+        #{cSw09,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw10 != null" >
+        #{cSw10,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw11 != null" >
+        #{cSw11,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw12 != null" >
+        #{cSw12,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw13 != null" >
+        #{cSw13,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw14 != null" >
+        #{cSw14,jdbcType=VARCHAR},
+      </if>
+      <if test="cSw15 != null" >
+        #{cSw15,jdbcType=VARCHAR},
+      </if>
+      <if test="cToolId != null">
+        #{cToolId,jdbcType=VARCHAR},
+      </if>
+      <if test="cToolage != null">
+        #{cToolage,jdbcType=VARCHAR},
+      </if>
+      <if test="cToolcastid != null">
+        #{cToolcastid,jdbcType=VARCHAR},
+      </if>
+      <if test="cToolstarttime != null">
+        #{cToolstarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cToolendtime != null">
+        #{cToolendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cPlantgb != null">
+        #{cPlantgb,jdbcType=DECIMAL},
+      </if>
+      <if test="cBehoof != null">
+        #{cBehoof,jdbcType=DECIMAL},
+      </if>
+      <if test="cCastingOrder != null">
+        #{cCastingOrder,jdbcType=DECIMAL},
+      </if>
+      <if test="cJjqid != null">
+        #{cJjqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+	
+
+</mapper>

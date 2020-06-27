@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: test
+mybatis:
+  mapperLocations: classpath:com/mkt/*/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.mkt.* : debug
+#server:
+  #服务端口
+ # port: 8080
+ # servlet:
+    #项目名
+   # context-path: /mkt
+

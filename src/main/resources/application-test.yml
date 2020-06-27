@@ -1,0 +1,103 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    druid:
+      one:
+        ##数据库配置
+        name: mysql
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mkt_test?&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+        ##连接池配置
+        #初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
+        initialSize: 5
+        # 最大连接池个数
+        maxActive: 20
+        #最小连接池数量
+        minIdle: 1
+        # 配置获取连接等待超时的时间，单位毫秒，缺省启用公平锁，并发效率会有所下降
+        maxWait: 6000
+        #用来检测连接是否有效的sql，要求是一个查询语句
+        validationQuery: SELECT 1 FROM DUAL
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        #申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+        testOnBorrow: false
+        #归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+        testOnReturn: false
+        #建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+        testWhileIdle: true
+        #连接保持空闲而不被驱逐的最长时间
+        minEvictableIdleTimeMillis: 25200000
+        #是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        #表示在回收连接的时候，在日志中输出回收的连接的信息，包括是在哪用的这个连接，可以用来追踪连接溢出
+        logAbandoned: true
+        #超过时间限制是否回收
+        removeAbandoned: true
+        #超时时间；单位为秒。180秒=3分钟
+        removeAbandonedTimeout: 1800
+        #超时时间：如果没有归还，则强制关闭
+        removeAbandonedTimeoutMillis: 1800000
+        #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙  maxPoolPreparedStatementPerConnectionSize
+        filters: stat,wall
+      two:
+        ##数据库配置
+        name: oracle
+        driverClassName: oracle.jdbc.OracleDriver
+        url: jdbc:oracle:thin:@127.0.0.1:1521/oracle
+        username: gqmes
+        password: gqmes2018
+        ##连接池配置
+        #初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
+        initialSize: 5
+        # 最大连接池个数
+        maxActive: 20
+        #最小连接池数量
+        minIdle: 1
+        # 配置获取连接等待超时的时间，单位毫秒，缺省启用公平锁，并发效率会有所下降
+        maxWait: 6000
+        #用来检测连接是否有效的sql，要求是一个查询语句
+        validationQuery: SELECT 1 FROM DUAL
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        #申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+        testOnBorrow: false
+        #归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+        testOnReturn: false
+        #建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+        testWhileIdle: true
+        #连接保持空闲而不被驱逐的最长时间
+        minEvictableIdleTimeMillis: 25200000
+        #是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        #表示在回收连接的时候，在日志中输出回收的连接的信息，包括是在哪用的这个连接，可以用来追踪连接溢出
+        logAbandoned: true
+        #超过时间限制是否回收
+        removeAbandoned: true
+        #超时时间；单位为秒。180秒=3分钟
+        removeAbandonedTimeout: 1800
+        #超时时间：如果没有归还，则强制关闭
+        removeAbandonedTimeoutMillis: 1800000
+        #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+        max-pool-prepared-statement-per-connection-size: 20
+        filters: "stat,wall"
+        #监控配置
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+        session-stat-enable: true
+        session-stat-max-count: 10
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+
+
+
